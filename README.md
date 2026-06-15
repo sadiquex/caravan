@@ -1,4 +1,4 @@
-# GroupTrack
+# Caravan
 
 Temporary location sharing for groups moving together. No accounts, no app install, expires in 8 hours.
 
