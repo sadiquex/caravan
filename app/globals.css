@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+  background: #08090C;
+  color: #ECEAE4;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Keyboard focus only — visible ring for a11y without affecting mouse/touch. */
+:focus-visible {
+  outline: 2px solid #F5904C;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+@keyframes gtpulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.6; }
+}
+
+/* Subtle staged entrance: rise + fade, runs once. */
+@keyframes gtrise {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.gt-rise {
+  animation: gtrise 0.42s cubic-bezier(0.2, 0, 0, 1) both;
+}
+
+.tnum {
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
